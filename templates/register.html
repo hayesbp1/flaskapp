@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Register</h1>
+
+    <form method="POST"
+          action="{{ url_for('register') }}"
+          enctype="multipart/form-data">
+
+        <label>Username</label>
+        <input type="text"
+               name="username"
+               required>
+
+        <label>Password</label>
+        <input type="password"
+               name="password"
+               required>
+
+        <label>First Name</label>
+        <input type="text"
+               name="firstname"
+               required>
+
+        <label>Last Name</label>
+        <input type="text"
+               name="lastname"
+               required>
+
+        <label>Email</label>
+        <input type="email"
+               name="email"
+               required>
+
+        <label>Address</label>
+        <input type="text"
+               name="address"
+               required>
+
+        <label>Upload Limerick File</label>
+        <input type="file"
+               name="file"
+               accept=".txt"
+               required>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <div class="login-link">
+        Already registered?
+        <a href="{{ url_for('login') }}">Login here</a>
+    </div>
+
+</div>
+
+</body>
+</html>
